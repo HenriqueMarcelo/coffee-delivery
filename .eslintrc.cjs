@@ -5,5 +5,6 @@ module.exports = {
     'no-unused-vars': 1,
     'prefer-template': 1,
     'no-empty': 1,
+    'jsx-a11y/alt-text': 0,
   },
 }

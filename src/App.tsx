@@ -1,10 +1,11 @@
 import { ThemeProvider } from 'styled-components'
+import { Header } from './components/Header'
 import { defaultTheme } from './styles/themes/default'
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <h1>Olá mundo</h1>
+      <Header />
     </ThemeProvider>
   )
 }
