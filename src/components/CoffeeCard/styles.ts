@@ -61,3 +61,46 @@ export const Description = styled.p`
 
   padding-bottom: 2.062rem;
 `
+
+export const PriceLine = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+`
+
+export const Price = styled.div`
+  color: ${({ theme }) => theme['gray-700']};
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+
+  white-space: nowrap;
+
+  span {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 130%;
+  }
+`
+
+export const Button = styled.button`
+  border: none;
+  background-color: ${({ theme }) => theme['purple-700']};
+  color: ${({ theme }) => theme.white};
+  border-radius: 6px;
+
+  padding: 0.5rem;
+  line-height: 0;
+  position: relative;
+
+  transition: all 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme['purple-500']};
+  }
+`
