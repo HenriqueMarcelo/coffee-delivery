@@ -65,6 +65,7 @@ export const Description = styled.p`
 export const PriceLine = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.25rem;
 `
 
@@ -96,6 +97,7 @@ export const Button = styled.button`
   padding: 0.5rem;
   line-height: 0;
   position: relative;
+  margin-left: 1rem;
 
   transition: all 0.1s;
   cursor: pointer;

@@ -24,4 +24,8 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
         line-height: 1.3
     }
+
+    .d-flex{
+        display: flex;
+    }
 `

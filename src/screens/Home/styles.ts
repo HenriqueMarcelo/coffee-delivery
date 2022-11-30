@@ -23,4 +23,6 @@ export const CoffeesContainer = styled.div`
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+
+  margin-bottom: 6rem;
 `

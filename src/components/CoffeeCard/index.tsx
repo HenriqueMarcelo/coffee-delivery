@@ -1,5 +1,6 @@
 import { ShoppingCart } from 'phosphor-react'
 import { coffees } from '../../coffees'
+import { NumberInput } from '../NumberInput'
 import {
   Button,
   CoffeeContainer,
@@ -30,7 +31,8 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         <Price>
           RS <span>9,90</span>
         </Price>
-        <div>
+        <div className="d-flex">
+          <NumberInput value="8" onChange={(v) => console.log(`Valor: ${v}`)} />
           <Button>
             <ShoppingCart size={22} weight="fill" />
           </Button>
