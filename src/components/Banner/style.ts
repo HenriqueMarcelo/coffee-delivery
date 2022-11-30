@@ -5,6 +5,7 @@ export const Section = styled.section`
   width: 100%;
   background-image: url(${background});
   background-position: center;
+  background-size: cover;
 `
 
 export const Container = styled.article`
