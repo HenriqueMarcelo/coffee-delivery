@@ -28,4 +28,12 @@ export const GlobalStyle = createGlobalStyle`
     .d-flex{
         display: flex;
     }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
 `

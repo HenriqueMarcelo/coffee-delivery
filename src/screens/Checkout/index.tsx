@@ -1,8 +1,10 @@
 import { CurrencyDollar, MapPinLine } from 'phosphor-react'
 import { useTheme } from 'styled-components'
+import { Input } from '../../components/Input'
 import {
   CheckoutContainer,
   CoffeesCard,
+  FormBody,
   FormCard,
   FormHeader,
   FormSubtitle,
@@ -28,6 +30,17 @@ export function Checkout() {
               </FormSubtitle>
             </div>
           </FormHeader>
+          <FormBody>
+            <div className="w-100">
+              <Input placeholder="CEP" grid={2} />
+            </div>
+            <Input placeholder="Rua" value="Rua das Cabras" />
+            <Input placeholder="Número" grid={2} />
+            <Input placeholder="Complemento (Opcional)" grid={4} />
+            <Input placeholder="Bairro" grid={2} />
+            <Input placeholder="Cidade" grid={3} />
+            <Input placeholder="UF" grid={1} />
+          </FormBody>
         </FormCard>
         <FormCard>
           <FormHeader>

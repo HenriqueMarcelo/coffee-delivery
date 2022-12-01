@@ -67,3 +67,9 @@ export const FormSubtitle = styled.h4`
 
   color: ${({ theme }) => theme['gray-700']};
 `
+
+export const FormBody = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+`
