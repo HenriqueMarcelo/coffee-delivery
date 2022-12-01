@@ -13,7 +13,7 @@ export const InputContainer = styled.input<InputContainerProps>`
   font-size: 14px;
   line-height: 130%;
 
-  color: #574f4d;
+  color: ${({ theme }) => theme['gray-700']};
   padding: 0.75rem;
 
   background-color: ${({ theme }) => theme['gray-300']};

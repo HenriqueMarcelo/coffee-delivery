@@ -1,6 +1,13 @@
-import { CurrencyDollar, MapPinLine } from 'phosphor-react'
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { Input } from '../../components/Input'
+import { Radio } from '../../components/Radio'
 import {
   CheckoutContainer,
   CoffeesCard,
@@ -52,6 +59,20 @@ export function Checkout() {
               </FormSubtitle>
             </div>
           </FormHeader>
+          <FormBody>
+            <Radio name="payment" id="cc">
+              <CreditCard size={16} color={theme['purple-500']} />
+              Cartão de Crédito
+            </Radio>
+            <Radio name="payment" id="cd">
+              <Bank size={16} color={theme['purple-500']} />
+              Cartão de Débto
+            </Radio>
+            <Radio name="payment" id="d">
+              <Money size={16} color={theme['purple-500']} />
+              Dinheiro
+            </Radio>
+          </FormBody>
         </FormCard>
       </LeftBlock>
       <RightBlock>

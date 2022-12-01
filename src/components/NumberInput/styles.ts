@@ -21,6 +21,10 @@ export const InputContainer = styled.div`
 
     cursor: pointer;
 
+    &:hover {
+      color: ${({ theme }) => theme['purple-700']};
+    }
+
     &:focus {
       /* box-shadow: 0 0 0 2px ${({ theme }) => theme['purple-500']}; */
       box-shadow: none;
