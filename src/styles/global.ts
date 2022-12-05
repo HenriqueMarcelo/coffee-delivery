@@ -36,4 +36,18 @@ export const GlobalStyle = createGlobalStyle`
     .w-100 {
         width: 100%;
     }
+
+    :root {
+        --gap: 0px;
+    }
+
+    @media (max-width: 768px) {
+        :root{
+            --gap: 1rem;
+        }
+        
+        html {
+            font-size: 87.5%;
+        }
+    }
 `

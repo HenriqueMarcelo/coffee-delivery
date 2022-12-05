@@ -1,4 +1,4 @@
-import { CurrencyDollar, MapPin, Money, Timer } from 'phosphor-react'
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import { Bottom, ConfirmationContainer, Icon, Line, OrderInfo } from './styles'
 import ilustration from '../../assets/Illustration.png'
 

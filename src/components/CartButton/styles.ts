@@ -4,7 +4,7 @@ export const Button = styled.button`
   border: none;
   background-color: ${({ theme }) => theme['yellow-300']};
   color: ${({ theme }) => theme['yellow-700']};
-  border-radius: 6px;
+  border-radius: 0.375rem;
 
   padding: 0.5rem;
   line-height: 0;
@@ -25,8 +25,8 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
 
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
 
     border-radius: 1000px;
     flex: none;
@@ -35,7 +35,7 @@ export const Button = styled.button`
     z-index: 1;
 
     font-weight: 700;
-    font-size: 12px;
+    font-size: 0.75rem;
 
     position: absolute;
     top: -0.5rem;

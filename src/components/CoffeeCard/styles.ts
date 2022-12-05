@@ -7,7 +7,7 @@ export const CoffeeContainer = styled.article`
   padding: 0 1.25rem;
 
   text-align: center;
-  flex: 0 0 256px;
+  flex: 1 0 256px;
 
   img {
     margin-bottom: 0.75rem;
@@ -27,7 +27,7 @@ export const Tag = styled.span`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 130%;
 
   color: ${({ theme }) => theme['yellow-700']};
@@ -43,7 +43,7 @@ export const Title = styled.h2`
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 130%;
 
   margin-bottom: 0.5rem;
@@ -54,7 +54,8 @@ export const Description = styled.p`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
+
   line-height: 130%;
 
   color: ${({ theme }) => theme['gray-600']};
@@ -74,7 +75,7 @@ export const Price = styled.div`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 130%;
 
   white-space: nowrap;
@@ -83,7 +84,7 @@ export const Price = styled.div`
     font-family: 'Baloo 2';
     font-style: normal;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 130%;
   }
 `

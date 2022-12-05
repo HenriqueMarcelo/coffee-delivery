@@ -18,12 +18,12 @@ export const Label = styled.label`
   border: 1px solid ${({ theme }) => theme['gray-400']};
   background: ${({ theme }) => theme['gray-400']};
   border-radius: 6px;
-  padding: 16px;
+  padding: 1rem;
 
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 160%;
   color: ${({ theme }) => theme['gray-700']};
 

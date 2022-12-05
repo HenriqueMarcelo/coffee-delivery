@@ -10,7 +10,7 @@ export const InputContainer = styled.input<InputContainerProps>`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 130%;
 
   color: ${({ theme }) => theme['gray-700']};

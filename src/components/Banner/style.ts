@@ -9,18 +9,23 @@ export const Section = styled.section`
 `
 
 export const Container = styled.article`
-  max-width: 1120px;
+  max-width: calc(1120px + 4rem);
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 5.875rem 0;
+  padding: 5.875rem 2rem;
   gap: 3.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem 2rem;
+  }
 
   h2 {
     font-family: 'Baloo 2';
     font-style: normal;
     font-weight: 800;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 130%;
 
     margin: 0;
@@ -32,7 +37,7 @@ export const Container = styled.article`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 130%;
 
     margin: 0;
@@ -44,7 +49,7 @@ export const Container = styled.article`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 130%;
 
     margin: 0;
@@ -56,6 +61,28 @@ export const Container = styled.article`
   .row {
     display: flex;
     gap: 2.5rem;
+  }
+`
+
+export const ImgContainer = styled.div`
+  /* flex: 1; */
+  img {
+    /* width: 100%; */
+    /* max-width: 100%; */
+  }
+
+  @media (max-width: 768px) {
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1190px) {
+    img {
+      max-width: 300px;
+    }
   }
 `
 

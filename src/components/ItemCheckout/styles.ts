@@ -22,7 +22,7 @@ export const Name = styled.h2`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 130%;
 
   color: ${({ theme }) => theme['gray-800']};
@@ -69,7 +69,7 @@ export const Price = styled.div`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 130%;
 
   color: ${({ theme }) => theme['gray-700']};

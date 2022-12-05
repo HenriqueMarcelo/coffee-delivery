@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 
 export const CheckoutContainer = styled.div`
-  max-width: 1120px;
+  max-width: calc(1120px + 4rem);
   display: flex;
   justify-content: space-between;
   margin: 2rem auto;
+  padding: 0 2rem;
 `
 
 export const Title = styled.h2`
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 130%;
 
   margin-bottom: 1rem;
@@ -51,7 +52,7 @@ export const FormTitle = styled.h3`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 130%;
 
   color: ${({ theme }) => theme['gray-800']};
@@ -62,7 +63,7 @@ export const FormSubtitle = styled.h4`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 130%;
 
   color: ${({ theme }) => theme['gray-700']};
@@ -83,13 +84,13 @@ export const NormalValue = styled.div`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 130%;
 
   margin-bottom: 0.75rem;
 
   & *:last-child {
-    font-size: 16px;
+    font-size: 1rem;
   }
 `
 
@@ -100,12 +101,12 @@ export const TotalValue = styled(NormalValue)`
   justify-content: space-between;
 
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
 
   margin-bottom: 1.5rem;
 
   & *:last-child {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 `
 
@@ -115,7 +116,7 @@ export const Button = styled.button`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 160%;
 
   text-transform: uppercase;

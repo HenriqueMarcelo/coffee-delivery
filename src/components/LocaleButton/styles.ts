@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Button = styled.button`
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.875rem;
 
   border: none;
   background-color: ${({ theme }) => theme['purple-300']};

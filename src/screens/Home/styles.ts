@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 //
 export const CoffeesSection = styled.section`
-  max-width: 1120px;
+  max-width: calc(1120px + 4rem);
   justify-content: space-between;
   margin: 2rem auto;
+  padding: 0 2rem;
 
   .title {
     font-family: 'Baloo 2';
@@ -25,4 +26,8 @@ export const CoffeesContainer = styled.div`
   flex-wrap: wrap;
 
   margin-bottom: 6rem;
+`
+
+export const FixFlexBox = styled.span`
+  flex: 1 0 256px;
 `

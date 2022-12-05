@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 export const ConfirmationContainer = styled.div`
-  max-width: 1120px;
+  max-width: calc(1120px + 4rem);
   justify-content: space-between;
   margin: 5rem auto;
+  padding: 0 2rem;
 
   h1 {
     font-family: 'Baloo 2';
@@ -19,7 +20,7 @@ export const ConfirmationContainer = styled.div`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 130%;
 
     color: ${({ theme }) => theme['gray-800']};

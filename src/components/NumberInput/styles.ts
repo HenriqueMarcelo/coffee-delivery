@@ -43,7 +43,7 @@ export const InputContainer = styled.div`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 130%;
 
     text-align: center;

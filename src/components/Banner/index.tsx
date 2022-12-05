@@ -1,4 +1,4 @@
-import { Container, Icon, Section } from './style'
+import { Container, Icon, ImgContainer, Section } from './style'
 import bannerImage from '../../assets/banner-image.png'
 import { ShoppingCart, Coffee, Package, Timer } from 'phosphor-react'
 
@@ -43,9 +43,9 @@ export function Banner() {
             </div>
           </div>
         </div>
-        <div>
+        <ImgContainer>
           <img src={bannerImage} />
-        </div>
+        </ImgContainer>
       </Container>
     </Section>
   )
