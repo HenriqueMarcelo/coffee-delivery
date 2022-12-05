@@ -73,3 +73,63 @@ export const FormBody = styled.div`
   flex-wrap: wrap;
   gap: 0.75rem;
 `
+
+export const NormalValue = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  color: ${({ theme }) => theme['gray-700']};
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+
+  margin-bottom: 0.75rem;
+
+  & *:last-child {
+    font-size: 16px;
+  }
+`
+
+export const TotalValue = styled(NormalValue)`
+  color: ${({ theme }) => theme['gray-800']};
+
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 700;
+  font-size: 20px;
+
+  margin-bottom: 1.5rem;
+
+  & *:last-child {
+    font-size: 20px;
+  }
+`
+
+export const Button = styled.button`
+  width: 100%;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+
+  text-transform: uppercase;
+
+  color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => theme['yellow-500']};
+
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme['yellow-700']};
+  }
+`

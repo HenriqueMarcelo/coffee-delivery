@@ -7,8 +7,10 @@ import {
 } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { Input } from '../../components/Input'
+import { ItemCheckout } from '../../components/ItemCheckout'
 import { Radio } from '../../components/Radio'
 import {
+  Button,
   CheckoutContainer,
   CoffeesCard,
   FormBody,
@@ -17,8 +19,10 @@ import {
   FormSubtitle,
   FormTitle,
   LeftBlock,
+  NormalValue,
   RightBlock,
   Title,
+  TotalValue,
 } from './styles'
 
 export function Checkout() {
@@ -75,9 +79,26 @@ export function Checkout() {
           </FormBody>
         </FormCard>
       </LeftBlock>
+
       <RightBlock>
         <Title>Cafés selecionados</Title>
-        <CoffeesCard>Lorem ipsum dolor sit amet consectetur.</CoffeesCard>
+        <CoffeesCard>
+          <ItemCheckout />
+          <ItemCheckout />
+          <NormalValue>
+            <span>Total de itens</span>
+            <span>R$ 29,70</span>
+          </NormalValue>
+          <NormalValue>
+            <span>Entrega</span>
+            <span>R$ 9,50</span>
+          </NormalValue>
+          <TotalValue>
+            <span>Total</span>
+            <span>R$ 9,50</span>
+          </TotalValue>
+          <Button>Confirmar Pedido</Button>
+        </CoffeesCard>
       </RightBlock>
     </CheckoutContainer>
   )
