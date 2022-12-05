@@ -8,6 +8,8 @@ export const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
 
   img {
     width: 4rem;
@@ -71,6 +73,8 @@ export const Price = styled.div`
   font-weight: 700;
   font-size: 1rem;
   line-height: 130%;
+
+  white-space: nowrap;
 
   color: ${({ theme }) => theme['gray-700']};
 `

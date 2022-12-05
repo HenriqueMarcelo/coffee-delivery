@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 export const RadioContainer = styled.div`
   flex: 1;
+  @media (max-width: 1090px) {
+    flex: 1 0 100%;
+  }
 `
 
 export const HiddenInput = styled.input`
@@ -33,6 +36,7 @@ export const Label = styled.label`
   align-items: center;
 
   text-transform: uppercase;
+  white-space: nowrap;
 
   cursor: pointer;
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ConfirmationContainer = styled.div`
+export const SuccessContainer = styled.div`
   max-width: calc(1120px + 4rem);
   justify-content: space-between;
   margin: 5rem auto;
@@ -33,16 +33,24 @@ export const Bottom = styled.div`
   align-items: flex-end;
 
   margin-top: 2.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `
 
 export const OrderInfo = styled.div`
   padding: 2.5rem;
-
   border-radius: 6px 36px;
 
   border-width: 1px;
   border-style: solid;
   border-color: ${({ theme }) => theme['purple-500']};
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const Line = styled.div`
@@ -70,5 +78,14 @@ export const Icon = styled.div`
 
   &.dark {
     background: ${({ theme }) => theme['yellow-700']};
+  }
+`
+
+export const ImageContainer = styled.div`
+  img {
+    max-width: 100%;
+  }
+  @media (max-width: 1090px) {
+    margin-top: 2rem;
   }
 `

@@ -1,10 +1,17 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
-import { Bottom, ConfirmationContainer, Icon, Line, OrderInfo } from './styles'
+import {
+  Bottom,
+  SuccessContainer,
+  Icon,
+  Line,
+  OrderInfo,
+  ImageContainer,
+} from './styles'
 import ilustration from '../../assets/Illustration.png'
 
-export function Confirmation() {
+export function Success() {
   return (
-    <ConfirmationContainer>
+    <SuccessContainer>
       <h1>Uhu! Pedido confirmado</h1>
       <h2>Agora é só aguardar que logo o café chegará até você</h2>
       <Bottom>
@@ -37,8 +44,10 @@ export function Confirmation() {
             </p>
           </Line>
         </OrderInfo>
-        <img src={ilustration} alt="" />
+        <ImageContainer>
+          <img src={ilustration} />
+        </ImageContainer>
       </Bottom>
-    </ConfirmationContainer>
+    </SuccessContainer>
   )
 }

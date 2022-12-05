@@ -4,8 +4,13 @@ export const CheckoutContainer = styled.div`
   max-width: calc(1120px + 4rem);
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
   margin: 2rem auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const Title = styled.h2`
@@ -21,15 +26,15 @@ export const Title = styled.h2`
 `
 
 export const LeftBlock = styled.div`
-  width: 640px;
+  flex: 1 1 640px;
 `
 
 export const RightBlock = styled.div`
-  width: 448px;
+  flex: 1 1 448px;
 `
 
 const Card = styled.div`
-  padding: 40px;
+  padding: 2.5rem;
   background-color: ${({ theme }) => theme['gray-200']};
 `
 
