@@ -1,17 +1,36 @@
 import { Trash } from 'phosphor-react'
+import { useContext } from 'react'
+import { coffees } from '../../coffees'
+import { ItemsContext } from '../../contexts/ItemsContext'
 import { NumberInput } from '../NumberInput'
 import { ItemContainer, Controls, Name, Button, Price } from './styles'
 
-export function ItemCheckout() {
+interface CoffeeProps {
+  coffee: typeof coffees[0]
+}
+
+export function ItemCheckout({ coffee }: CoffeeProps) {
+  const { items, updateQuantity, removeAllItems } = useContext(ItemsContext)
+
+  function handleChangeQuantity(newQuantity: number) {
+    updateQuantity(coffee.id, newQuantity)
+  }
+
+  function handleRemove() {
+    removeAllItems(coffee.id)
+  }
+
+  const quantity = items.find((item) => item.id === coffee.id)?.quantity || 0
+
   return (
     <ItemContainer>
       <div className="d-flex">
-        <img src="/coffees/Expresso.png" />
+        <img src={`/coffees/${coffee.image}`} />
         <Controls>
-          <Name>Expresso Tradicional</Name>
+          <Name>{coffee.name}</Name>
           <div className="d-flex">
-            <NumberInput />
-            <Button>
+            <NumberInput value={quantity} onChange={handleChangeQuantity} />
+            <Button onClick={handleRemove}>
               <Trash size={16} />
               Remover
             </Button>

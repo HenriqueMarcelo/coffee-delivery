@@ -5,10 +5,13 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+import { useContext } from 'react'
 import { useTheme } from 'styled-components'
+import { coffees } from '../../coffees'
 import { Input } from '../../components/Input'
 import { ItemCheckout } from '../../components/ItemCheckout'
 import { Radio } from '../../components/Radio'
+import { ItemsContext } from '../../contexts/ItemsContext'
 import {
   Button,
   CheckoutContainer,
@@ -27,6 +30,9 @@ import {
 
 export function Checkout() {
   const theme = useTheme()
+
+  const { items } = useContext(ItemsContext)
+
   return (
     <CheckoutContainer>
       <LeftBlock>
@@ -83,8 +89,13 @@ export function Checkout() {
       <RightBlock>
         <Title>Cafés selecionados</Title>
         <CoffeesCard>
-          <ItemCheckout />
-          <ItemCheckout />
+          {items.map((item) => {
+            const c = coffees.find((coffe) => coffe.id === item.id)
+            if (c) {
+              return <ItemCheckout coffee={c} key={c.id} />
+            }
+            return null
+          })}
           <NormalValue>
             <span>Total de itens</span>
             <span>R$ 29,70</span>

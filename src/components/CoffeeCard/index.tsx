@@ -1,5 +1,5 @@
 import { ShoppingCart } from 'phosphor-react'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { coffees } from '../../coffees'
 import { ItemsContext } from '../../contexts/ItemsContext'
 import { useNavigate } from 'react-router-dom'
@@ -21,13 +21,11 @@ interface CoffeeProps {
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
   const { items, updateQuantity, addItem } = useContext(ItemsContext)
-  // const [quantity, setQuantity] = useState(0)
 
   const navigate = useNavigate()
 
   function handleChangeQuantity(newQuantity: number) {
     updateQuantity(coffee.id, newQuantity)
-    // setQuantity(newQuantity)
   }
 
   function handleBuyButton() {
@@ -39,7 +37,6 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
 
   const quantity = items.find((item) => item.id === coffee.id)?.quantity || 0
 
-  console.log(quantity)
   return (
     <CoffeeContainer>
       <img src={`/coffees/${coffee.image}`} />
