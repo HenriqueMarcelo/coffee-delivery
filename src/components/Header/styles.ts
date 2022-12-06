@@ -11,4 +11,8 @@ export const Container = styled.header`
     display: flex;
     gap: 0.75rem;
   }
+
+  img {
+    display: block;
+  }
 `

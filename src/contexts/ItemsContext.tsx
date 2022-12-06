@@ -24,14 +24,18 @@ export function ItemsContextProvider({ children }: ItemsContextProviderProps) {
 
   function addItem(itemId: string) {
     setItems((state) => {
-      return state.map((item) => {
-        if (item.id === itemId) {
-          item.quantity++
-          return item
-        } else {
-          return item
-        }
-      })
+      const test = state.find((item) => item.id === itemId)
+      if (test) {
+        return state.map((item) => {
+          if (item.id === itemId) {
+            item.quantity++
+            return item
+          } else {
+            return item
+          }
+        })
+      }
+      return [...state, { id: itemId, quantity: 1 }]
     })
   }
 

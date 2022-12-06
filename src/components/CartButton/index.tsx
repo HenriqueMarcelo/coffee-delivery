@@ -5,15 +5,14 @@ import { Button } from './styles'
 
 export function CartButton() {
   const { items } = useContext(ItemsContext)
+  const total = items.reduce(
+    (total, itemSelected) => (total += itemSelected.quantity),
+    0,
+  )
   return (
-    <Button>
+    <Button to="/checkout" disabled={!total}>
       <ShoppingCart size={22} weight="fill" />
-      <span className="quantity">
-        {items.reduce(
-          (total, itemSelected) => (total += itemSelected.quantity),
-          0,
-        )}
-      </span>
+      {!!total && <span className="quantity">{total}</span>}
     </Button>
   )
 }

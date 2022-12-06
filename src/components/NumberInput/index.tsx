@@ -1,5 +1,5 @@
 import { Minus, Plus } from 'phosphor-react'
-import { ChangeEvent, InputHTMLAttributes, useEffect, useState } from 'react'
+import { ChangeEvent, InputHTMLAttributes } from 'react'
 import { InputContainer } from './styles'
 
 interface NumberInputProps
@@ -8,26 +8,23 @@ interface NumberInputProps
 }
 
 export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
-  const [customValue, setCustomValue] = useState(Number(value))
-
   function handleSetCustomValue(e: ChangeEvent<HTMLInputElement>) {
-    setCustomValue(Number(e.target.value))
+    if (onChange) {
+      onChange(Number(e.target.value))
+    }
   }
 
   function handleDecreaseValue() {
-    setCustomValue((state) => --state)
+    if (onChange) {
+      onChange(Number(value) - 1)
+    }
   }
 
   function handleIncreaseValue() {
-    setCustomValue((state) => ++state)
-  }
-
-  useEffect(() => {
     if (onChange) {
-      onChange(customValue)
+      onChange(Number(value) + 1)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [customValue])
+  }
 
   return (
     <InputContainer>
@@ -36,7 +33,7 @@ export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
       </button>
       <input
         type="number"
-        value={customValue}
+        value={value}
         onChange={handleSetCustomValue}
         {...rest}
       />
