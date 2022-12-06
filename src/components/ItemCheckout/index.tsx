@@ -22,6 +22,13 @@ export function ItemCheckout({ coffee }: CoffeeProps) {
 
   const quantity = items.find((item) => item.id === coffee.id)?.quantity || 0
 
+  const total = coffee.price * quantity
+
+  const totalString = total.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
   return (
     <ItemContainer>
       <div className="d-flex">
@@ -37,7 +44,7 @@ export function ItemCheckout({ coffee }: CoffeeProps) {
           </div>
         </Controls>
       </div>
-      <Price>R$ 9,90</Price>
+      <Price>{totalString}</Price>
     </ItemContainer>
   )
 }

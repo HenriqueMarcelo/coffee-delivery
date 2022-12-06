@@ -33,6 +33,31 @@ export function Checkout() {
 
   const { items } = useContext(ItemsContext)
 
+  const price = items.reduce((accumulator, item) => {
+    const coffee = coffees.find((i) => i.id === item.id)
+    if (coffee) {
+      return accumulator + coffee.price * item.quantity
+    }
+    return accumulator
+  }, 0)
+  const deliveryFee = 9.9
+  const total = price + deliveryFee
+
+  const priceString = price.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
+  const deliveryFeeString = deliveryFee.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
+  const totalString = total.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
   return (
     <CheckoutContainer>
       <LeftBlock>
@@ -98,15 +123,15 @@ export function Checkout() {
           })}
           <NormalValue>
             <span>Total de itens</span>
-            <span>R$ 29,70</span>
+            <span>{priceString}</span>
           </NormalValue>
           <NormalValue>
             <span>Entrega</span>
-            <span>R$ 9,50</span>
+            <span>{deliveryFeeString}</span>
           </NormalValue>
           <TotalValue>
             <span>Total</span>
-            <span>R$ 9,50</span>
+            <span>{totalString}</span>
           </TotalValue>
           <Button>Confirmar Pedido</Button>
         </CoffeesCard>

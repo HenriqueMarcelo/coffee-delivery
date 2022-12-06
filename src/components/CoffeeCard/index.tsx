@@ -37,6 +37,13 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
 
   const quantity = items.find((item) => item.id === coffee.id)?.quantity || 0
 
+  const [symbol, price] = coffee.price
+    .toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    })
+    .split(' ')
+
   return (
     <CoffeeContainer>
       <img src={`/coffees/${coffee.image}`} />
@@ -49,7 +56,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
       <Description>{coffee.description}</Description>
       <PriceLine>
         <Price>
-          RS <span>9,90</span>
+          {symbol} <span>{price}</span>
         </Price>
         <div className="d-flex">
           <NumberInput value={quantity} onChange={handleChangeQuantity} />
