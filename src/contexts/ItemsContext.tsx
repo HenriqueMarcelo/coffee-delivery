@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react'
 
 interface ItemSelected {
   id: string
@@ -20,7 +20,18 @@ interface ItemsContextProviderProps {
 export const ItemsContext = createContext({} as ItemContextType)
 
 export function ItemsContextProvider({ children }: ItemsContextProviderProps) {
-  const [items, setItems] = useState<ItemSelected[]>([])
+  const [items, setItems] = useState<ItemSelected[]>(
+    JSON.parse(
+      localStorage.getItem('@coffee-delivery:items-state-1.0.0') || '[]',
+    ) || [],
+  )
+
+  useEffect(() => {
+    console.log(items)
+    const stateJSON = JSON.stringify(items)
+
+    localStorage.setItem('@coffee-delivery:items-state-1.0.0', stateJSON)
+  }, [items])
 
   function addItem(itemId: string) {
     setItems((state) => {
