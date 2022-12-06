@@ -26,7 +26,8 @@ export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
     if (onChange) {
       onChange(customValue)
     }
-  }, [customValue, onChange])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [customValue])
 
   return (
     <InputContainer>

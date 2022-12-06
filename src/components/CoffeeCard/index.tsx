@@ -1,5 +1,7 @@
 import { ShoppingCart } from 'phosphor-react'
+import { useContext, useState } from 'react'
 import { coffees } from '../../coffees'
+import { ItemsContext } from '../../contexts/ItemsContext'
 import { NumberInput } from '../NumberInput'
 import {
   Button,
@@ -17,6 +19,12 @@ interface CoffeeProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
+  const { updateQuantity } = useContext(ItemsContext)
+
+  function handleChangeQuantity(newQuantity: number) {
+    updateQuantity(coffee.id, newQuantity)
+  }
+
   return (
     <CoffeeContainer>
       <img src={`/coffees/${coffee.image}`} />
@@ -32,7 +40,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
           RS <span>9,90</span>
         </Price>
         <div className="d-flex">
-          <NumberInput value="8" onChange={(v) => console.log(`Valor: ${v}`)} />
+          <NumberInput value={0} onChange={handleChangeQuantity} />
           <Button>
             <ShoppingCart size={22} weight="fill" />
           </Button>
