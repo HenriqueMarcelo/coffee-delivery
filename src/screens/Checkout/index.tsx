@@ -7,6 +7,7 @@ import {
 } from 'phosphor-react'
 import { useContext } from 'react'
 import { useTheme } from 'styled-components'
+import { useForm } from 'react-hook-form'
 import { coffees } from '../../coffees'
 import { Input } from '../../components/Input'
 import { ItemCheckout } from '../../components/ItemCheckout'
@@ -30,6 +31,23 @@ import {
 
 export function Checkout() {
   const theme = useTheme()
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: {
+      payment: '',
+      rua: '',
+      cep: '',
+      number: '',
+      complement: '',
+      district: '',
+      city: '',
+      uf: '',
+    },
+  })
+
+  const handleCreateOrder = (data: any) => {
+    console.log(data)
+    reset()
+  }
 
   const { items } = useContext(ItemsContext)
 
@@ -59,7 +77,7 @@ export function Checkout() {
   })
 
   return (
-    <CheckoutContainer>
+    <CheckoutContainer onSubmit={handleSubmit(handleCreateOrder)}>
       <LeftBlock>
         <Title>Complete seu pedido</Title>
         <FormCard>
@@ -74,14 +92,33 @@ export function Checkout() {
           </FormHeader>
           <FormBody>
             <div className="w-100">
-              <Input placeholder="CEP" grid={2} />
+              <Input placeholder="CEP" grid={2} {...register('cep')} required />
             </div>
-            <Input placeholder="Rua" value="Rua das Cabras" />
-            <Input placeholder="Número" grid={2} />
-            <Input placeholder="Complemento (Opcional)" grid={4} />
-            <Input placeholder="Bairro" grid={2} />
-            <Input placeholder="Cidade" grid={3} />
-            <Input placeholder="UF" grid={1} />
+            <Input placeholder="Rua" {...register('rua')} required />
+            <Input
+              placeholder="Número"
+              grid={2}
+              {...register('number')}
+              required
+            />
+            <Input
+              placeholder="Complemento (Opcional)"
+              grid={4}
+              {...register('complement')}
+            />
+            <Input
+              placeholder="Bairro"
+              grid={2}
+              {...register('district')}
+              required
+            />
+            <Input
+              placeholder="Cidade"
+              grid={3}
+              {...register('city')}
+              required
+            />
+            <Input placeholder="UF" grid={1} {...register('uf')} required />
           </FormBody>
         </FormCard>
         <FormCard>
@@ -95,15 +132,15 @@ export function Checkout() {
             </div>
           </FormHeader>
           <FormBody>
-            <Radio name="payment" id="cc">
+            <Radio id="cc" value="cc" {...register('payment')}>
               <CreditCard size={16} color={theme['purple-500']} />
               Cartão de Crédito
             </Radio>
-            <Radio name="payment" id="cd">
+            <Radio id="cd" value="cd" {...register('payment')}>
               <Bank size={16} color={theme['purple-500']} />
               Cartão de Débto
             </Radio>
-            <Radio name="payment" id="d">
+            <Radio id="d" value="d" {...register('payment')}>
               <Money size={16} color={theme['purple-500']} />
               Dinheiro
             </Radio>
