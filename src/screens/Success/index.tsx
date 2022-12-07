@@ -8,8 +8,44 @@ import {
   ImageContainer,
 } from './styles'
 import ilustration from '../../assets/Illustration.png'
+import { Link, useLocation } from 'react-router-dom'
+import { useTheme } from 'styled-components'
+
+const paymentNames = {
+  cc: 'Cartão de Crédito',
+  cd: 'Cartão de Débto',
+  d: 'Dinheiro',
+}
+
+interface StateProps {
+  payment: 'cc' | 'cd' | 'd'
+  street: string
+  cep: string
+  number: string
+  complement?: string
+  district: string
+  city: string
+  uf: string
+  deliveryTime: string
+}
 
 export function Success() {
+  const location = useLocation()
+  const state = location.state as StateProps
+  const theme = useTheme()
+
+  if (!state) {
+    return (
+      <SuccessContainer>
+        <h1>Parece que você está perdido :(</h1>
+        <h2>
+          <Link to="/" style={{ color: theme['purple-700'] }}>
+            Voltar para o início
+          </Link>
+        </h2>
+      </SuccessContainer>
+    )
+  }
   return (
     <SuccessContainer>
       <h1>Uhu! Pedido confirmado</h1>
@@ -21,8 +57,12 @@ export function Success() {
               <CurrencyDollar size={16} />
             </Icon>
             <p>
-              Entrega em <strong>Rua João Daniel Martinelli, 102</strong> <br />
-              Farrapos - Porto Alegre, RS
+              Entrega em
+              <strong>
+                {state.street}, {state.number}
+              </strong>
+              <br />
+              {state.district} - {state.city}, {state.uf}
             </p>
           </Line>
           <Line>
@@ -31,7 +71,7 @@ export function Success() {
             </Icon>
             <p>
               Previsão de entrega <br />
-              <strong>20 min - 30 min </strong>
+              <strong>{state.deliveryTime}</strong>
             </p>
           </Line>
           <Line>
@@ -40,7 +80,7 @@ export function Success() {
             </Icon>
             <p>
               Pagamento na entrega <br />
-              <strong>Cartão de Crédito </strong>
+              <strong>{paymentNames[state.payment]}</strong>
             </p>
           </Line>
         </OrderInfo>

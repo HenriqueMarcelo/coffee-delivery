@@ -27,7 +27,6 @@ export function ItemsContextProvider({ children }: ItemsContextProviderProps) {
   )
 
   useEffect(() => {
-    console.log(items)
     const stateJSON = JSON.stringify(items)
 
     localStorage.setItem('@coffee-delivery:items-state-1.0.0', stateJSON)

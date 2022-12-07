@@ -28,13 +28,15 @@ import {
   Title,
   TotalValue,
 } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 export function Checkout() {
+  const navigate = useNavigate()
   const theme = useTheme()
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       payment: '',
-      rua: '',
+      street: '',
       cep: '',
       number: '',
       complement: '',
@@ -45,8 +47,16 @@ export function Checkout() {
   })
 
   const handleCreateOrder = (data: any) => {
-    console.log(data)
+    // todo: calculate this
+    const deliveryTime = '20 min - 30 min'
+    const order = {
+      ...data,
+      deliveryTime,
+    }
     reset()
+    navigate(`/success`, {
+      state: order,
+    })
   }
 
   const { items } = useContext(ItemsContext)
@@ -94,7 +104,7 @@ export function Checkout() {
             <div className="w-100">
               <Input placeholder="CEP" grid={2} {...register('cep')} required />
             </div>
-            <Input placeholder="Rua" {...register('rua')} required />
+            <Input placeholder="Rua" {...register('street')} required />
             <Input
               placeholder="Número"
               grid={2}
