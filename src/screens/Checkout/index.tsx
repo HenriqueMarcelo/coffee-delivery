@@ -30,6 +30,8 @@ import {
 } from './styles'
 import { useNavigate } from 'react-router-dom'
 
+// todo: Use CEP to get info from some API
+
 export function Checkout() {
   const navigate = useNavigate()
   const theme = useTheme()
@@ -54,12 +56,13 @@ export function Checkout() {
       deliveryTime,
     }
     reset()
+    deleteEverything()
     navigate(`/success`, {
       state: order,
     })
   }
 
-  const { items } = useContext(ItemsContext)
+  const { items, deleteEverything } = useContext(ItemsContext)
 
   const price = items.reduce((accumulator, item) => {
     const coffee = coffees.find((i) => i.id === item.id)

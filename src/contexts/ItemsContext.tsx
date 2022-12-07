@@ -11,6 +11,7 @@ interface ItemContextType {
   removeItem: (itemId: string) => void
   removeAllItems: (itemId: string) => void
   updateQuantity: (itemId: string, quantity: number) => void
+  deleteEverything: () => void
 }
 
 interface ItemsContextProviderProps {
@@ -98,6 +99,10 @@ export function ItemsContextProvider({ children }: ItemsContextProviderProps) {
     }
   }
 
+  function deleteEverything() {
+    setItems([])
+  }
+
   return (
     <ItemsContext.Provider
       value={{
@@ -106,6 +111,7 @@ export function ItemsContextProvider({ children }: ItemsContextProviderProps) {
         removeAllItems,
         removeItem,
         updateQuantity,
+        deleteEverything,
       }}
     >
       {children}
