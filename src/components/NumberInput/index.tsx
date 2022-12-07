@@ -28,7 +28,7 @@ export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
 
   return (
     <InputContainer>
-      <button onClick={handleDecreaseValue}>
+      <button type="button" onClick={handleDecreaseValue}>
         <Minus size={14} weight="fill" />
       </button>
       <input
@@ -37,7 +37,7 @@ export function NumberInput({ onChange, value, ...rest }: NumberInputProps) {
         onChange={handleSetCustomValue}
         {...rest}
       />
-      <button onClick={handleIncreaseValue}>
+      <button type="button" onClick={handleIncreaseValue}>
         <Plus size={14} weight="fill" />
       </button>
     </InputContainer>

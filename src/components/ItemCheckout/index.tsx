@@ -37,7 +37,7 @@ export function ItemCheckout({ coffee }: CoffeeProps) {
           <Name>{coffee.name}</Name>
           <div className="d-flex">
             <NumberInput value={quantity} onChange={handleChangeQuantity} />
-            <Button onClick={handleRemove}>
+            <Button type="button" onClick={handleRemove}>
               <Trash size={16} />
               Remover
             </Button>
