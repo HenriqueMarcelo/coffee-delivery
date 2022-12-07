@@ -49,6 +49,12 @@ export function Checkout() {
   })
 
   const handleCreateOrder = (data: any) => {
+    // todo: improve this validation
+    if (!data.payment) {
+      alert('Selecione um meio de pagamento')
+      return
+    }
+
     // todo: calculate this
     const deliveryTime = '20 min - 30 min'
     const order = {
