@@ -57,7 +57,7 @@ export function Success() {
               <CurrencyDollar size={16} />
             </Icon>
             <p>
-              Entrega em
+              Entrega em{' '}
               <strong>
                 {state.street}, {state.number}
               </strong>
