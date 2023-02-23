@@ -5,6 +5,8 @@ import { ItemsContext } from '../../contexts/ItemsContext'
 import { NumberInput } from '../NumberInput'
 import { ItemContainer, Controls, Name, Button, Price } from './styles'
 
+const publicURL = import.meta.env.VITE_PUBLIC_URL || '/'
+
 interface CoffeeProps {
   coffee: typeof coffees[0]
 }
@@ -32,7 +34,7 @@ export function ItemCheckout({ coffee }: CoffeeProps) {
   return (
     <ItemContainer>
       <div className="d-flex">
-        <img src={`/coffees/${coffee.image}`} />
+        <img src={`${publicURL}coffees/${coffee.image}`} />
         <Controls>
           <Name>{coffee.name}</Name>
           <div className="d-flex">

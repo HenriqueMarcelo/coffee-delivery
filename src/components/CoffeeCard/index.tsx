@@ -15,6 +15,8 @@ import {
   Title,
 } from './styles'
 
+const publicURL = import.meta.env.VITE_PUBLIC_URL || '/'
+
 interface CoffeeProps {
   coffee: typeof coffees[0]
 }
@@ -46,7 +48,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
 
   return (
     <CoffeeContainer>
-      <img src={`/coffees/${coffee.image}`} />
+      <img src={`${publicURL}coffees/${coffee.image}`} />
       <TagContainer>
         {coffee.tags.map((tag) => (
           <Tag key={tag}>{tag}</Tag>

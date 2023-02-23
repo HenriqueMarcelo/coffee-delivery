@@ -5,10 +5,12 @@ import { Router } from './components/Router'
 import { BrowserRouter } from 'react-router-dom'
 import { ItemsContextProvider } from './contexts/ItemsContext'
 
+const publicURL = import.meta.env.VITE_PUBLIC_URL || '/'
+
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename={publicURL}>
         <ItemsContextProvider>
           <Router />
         </ItemsContextProvider>
