@@ -17,7 +17,7 @@ jobs:
       - name: 'Create env file 🌱'
         run: |
           touch .env
-          echo VITE_PUBLIC_URL="/coffee-delivery" >> .env
+          echo VITE_PUBLIC_URL="/coffee-delivery/" >> .env
           cat .env
 
       - name: Build dependencies 👷‍♀️
