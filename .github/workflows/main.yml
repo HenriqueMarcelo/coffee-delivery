@@ -17,9 +17,7 @@ jobs:
       - name: 'Create env file 🌱'
         run: |
           touch .env
-          echo VITE_GITHUB_USERNAME="HenriqueMarcelo" >> .env
-          echo VITE_GITHUB_REPOSITORY="github-blog" >> .env
-          echo VITE_BASENAME="/github-blog" >> .env
+          echo VITE_PUBLIC_URL="/coffee-delivery" >> .env
           cat .env
 
       - name: Build dependencies 👷‍♀️
