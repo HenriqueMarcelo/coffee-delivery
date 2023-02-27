@@ -2,7 +2,7 @@
 
 # Coffe Delivery
 
-This project is a front-end simulator for an online coffee shop. It is not integrated with a back-end, but was created to simulate the front-end of a real application. The application can be accessed at: http://kursi.com.br/coffee-delivery
+This project is a front-end simulator for an online coffee shop. It is not integrated with a back-end, but was created to simulate the front-end of a real application. The application can be accessed at: https://coffee-delivery.kursi.com.br
 
 The application has three screens:
 
